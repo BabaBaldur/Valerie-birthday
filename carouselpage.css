@@ -1354,7 +1354,7 @@ header nav a {
     transform: translateY(-50%) translateX(50%) scale(0.85);
     }
     .poetryscrollpage footer{
-        min-height: 3300px;
+        min-height: 3400px;
         padding-bottom: 200px;
     }
 }
