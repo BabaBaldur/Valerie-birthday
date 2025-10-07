@@ -18,7 +18,7 @@ const CONFIG = {
     },
     validation: {
         correctPassword: 'Valhalla Meridius',
-        nextPage: 'bdaypagerough.html'
+        nextPage: 'carouselpage.html'
     },
     messages: {
         correct: { text: 'That is the name!!', color: '#7dd3c0' },
