@@ -295,6 +295,29 @@ header nav a {
     background-color: var(--hover-bg);
 }
 
+.item[data-item="2"]:nth-child(2) .introduce .title{
+    color: rgb(252, 250, 242);
+}
+.item[data-item="2"]:nth-child(2) .introduce .topic {
+    color: rgb(129, 86, 54);
+}
+.item[data-item="2"]:nth-child(2) .introduce .des {
+    color: rgb(235, 226, 203);
+}
+.item[data-item="2"]:nth-child(2) .introduce .seeMore {
+    color: rgb(139, 103, 59);
+}
+
+.item[data-item="3"]:nth-child(2) .introduce .topic{
+    color: rgb(152, 125, 131);
+}
+.item[data-item="3"]:nth-child(2) .introduce .des {
+    color: rgba(255, 255, 255, 0.8);
+}
+.item[data-item="3"]:nth-child(2) .introduce .seeMore {
+    color: rgb(101, 91, 108);
+}
+
 /* =========================
    ANIMATIONS
    ========================= */
@@ -468,12 +491,17 @@ header nav a {
 }
 
 .carousel.showDetail .list .item[data-item="2"]:nth-child(2) .detail .title {
-    color: #5c4033;
+    color: rgb(129, 86, 54);
 }
 
-.carousel.showDetail .list .item[data-item="3"]:nth-child(2) .detail .title,
+.carousel.showDetail .list .item[data-item="3"]:nth-child(2) .detail .title {
+    color: rgb(152, 125, 131);
+}
 .carousel.showDetail .list .item[data-item="3"]:nth-child(2) .detail .des {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+.carousel.showDetail .list .item[data-item="3"]:nth-child(2) .detail .checkout button {
+    color: rgb(101, 91, 108);
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail .title {
@@ -514,6 +542,10 @@ header nav a {
     animation: showContent 0.5s 1s ease-in-out 1 forwards;
 }
 
+.carousel.showDetail .list .item[data-item="2"]:nth-child(2) .checkout button {
+    color: rgb(139, 103, 59);
+}
+
 .carousel.showDetail .list .item:nth-child(2) .detail .des { animation-delay: 1.2s; }
 .carousel.showDetail .list .item:nth-child(2) .detail .checkout { animation-delay: 1.6s; }
 
@@ -545,6 +577,8 @@ header nav a {
     background-color: transparent;
     cursor: pointer;
     transition: background var(--transition-base);
+    background-color: #7dd3c0;
+    opacity: 0.7;
 }
 
 #next {
