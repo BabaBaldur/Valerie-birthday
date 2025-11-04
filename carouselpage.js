@@ -212,16 +212,15 @@ const BirthdayCarousel = (() => {
         state.currentView = 'trinket';
         elements.carousel.classList.remove('showDetail');
         elements.carousel.classList.add('showTrinketScroll');
+        
+        // Set single static background
+        const trinketBg = document.querySelector('.trinket-background');
+        if (trinketBg) {
+            trinketBg.style.backgroundImage = "url('pageimages/keepsakebackground.jpeg')";
+        }
+        
         updateBlurBackgroundCrossfade('pageimages/keepsakebackground.jpeg');
         updateHash();
-
-        // Gradually fade in the fixed background
-        setTimeout(() => {
-            const fixedBg = document.querySelector('.trinketscrollpage .fixed-background');
-            if (fixedBg) {
-                fixedBg.style.display = 'block'; // Ensure it's displayed
-            }
-        }, 100);
     }
 
     // Reset wheel rotation
