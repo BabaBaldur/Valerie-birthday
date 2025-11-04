@@ -1,4 +1,3 @@
-
 /* =========================
    OPTIMIZED BIRTHDAY PAGE CSS
    Fixed bugs, reduced redundancy, improved performance
@@ -318,6 +317,16 @@ header nav a {
     color: rgb(101, 91, 108);
 }
 
+.item[data-item="4"]:nth-child(2) .introduce .topic {
+    color: rgb(226, 137, 81);
+}
+.item[data-item="4"]:nth-child(2) .introduce .des {
+    color: rgba(172, 178, 130);
+}
+.item[data-item="4"]:nth-child(2) .introduce .seeMore {
+    color: rgb(139, 103, 59);
+}
+
 /* =========================
    ANIMATIONS
    ========================= */
@@ -468,7 +477,7 @@ header nav a {
 
 
 .carousel.showDetail .list .item[data-item="4"]:nth-child(2) img {
-    top: 45%;
+    top: 50%;
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail {
@@ -502,6 +511,16 @@ header nav a {
 }
 .carousel.showDetail .list .item[data-item="3"]:nth-child(2) .detail .checkout button {
     color: rgb(101, 91, 108);
+}
+
+.carousel.showDetail .list .item[data-item="4"]:nth-child(2) .detail .title {
+    color: rgb(226, 137, 81);
+}
+.carousel.showDetail .list .item[data-item="4"]:nth-child(2) .detail .des {
+    color: rgba(172, 178, 130);
+}
+.carousel.showDetail .list .item[data-item="4"]:nth-child(2) .detail .checkout button {
+    color: rgb(139, 103, 59);
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail .title {
@@ -548,6 +567,7 @@ header nav a {
 
 .carousel.showDetail .list .item:nth-child(2) .detail .des { animation-delay: 1.2s; }
 .carousel.showDetail .list .item:nth-child(2) .detail .checkout { animation-delay: 1.6s; }
+
 
 /* =========================
    NAVIGATION CONTROLS
@@ -935,7 +955,7 @@ header nav a {
 .poetryscrollpage main {
     width: min(1400px, 100vw);
     margin: auto;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     position: relative;
     z-index: 10;
 }
@@ -1171,6 +1191,242 @@ header nav a {
 }
 
 /* =========================
+   TRINKET SCROLL PAGE
+   ========================= */
+.trinketscrollpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    z-index: 1;
+    margin: 0;
+    font-size: 14px;
+    color: #E8D7B8;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.carousel.showTrinketScroll .trinketscrollpage {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 100;
+    animation: fadeInTrinketScroll 1s 0.5s ease forwards;
+}
+
+@keyframes fadeInTrinketScroll {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.carousel.showTrinketScroll .list .item:nth-child(2) img {
+    right: 150%;
+    transition: right 1.5s ease;
+}
+
+.carousel.showTrinketScroll .list .item:nth-child(2) .detail,
+.carousel.showTrinketScroll .list .item:nth-child(2) .introduce {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel.showTrinketScroll .list .item:nth-child(2) .detail {
+    transform: translateY(-50%) translateX(50%);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carousel.showTrinketScroll .list .item:nth-child(2) .detail .title,
+.carousel.showTrinketScroll .list .item:nth-child(2) .detail .des,
+.carousel.showTrinketScroll .list .item:nth-child(2) .detail .checkout {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel.showTrinketScroll .list .item:not(:nth-child(2)),
+.carousel.showTrinketScroll .arrows {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* .trinketscrollpage::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a1824;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+} */
+
+.trinketscrollpage * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.trinketscrollpage main {
+    width: min(1400px, 100vw);
+    margin: auto;
+    padding: 20px 20px 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.trinketscrollpage .banner {
+    text-align: center;
+    padding: 200px 0;
+    margin-bottom: 300px;
+}
+
+.trinketscrollpage .banner h1 {
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 12em;
+    font-weight: 700;
+    background: url('pageimages/scroll2.JPG');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.trinketscrollpage .content-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 300px;
+}
+
+.trinketscrollpage .text-content {
+    padding: 40px;
+    font-size: 1.7em;
+}
+
+.trinketscrollpage .text-content p {
+    line-height: 1.8;
+}
+
+.trinketscrollpage .image-content {
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.trinketscrollpage .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trinketscrollpage .content-spacer {
+    height: 200px;
+}
+
+.trinketscrollpage .content-block.imageA {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 25%;
+}
+
+.trinketscrollpage .content-block.imageB {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 25%;
+}
+
+.trinketscrollpage .content-block.imageC {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 25%;
+}
+
+.trinketscrollpage .content-block.imageD {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 25%;
+}
+
+.trinketscrollpage .autoShow {
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+}
+
+.trinketscrollpage .autoBLur {
+    animation: autoBLurAnimation linear both;
+    animation-timeline: view();
+}
+
+#backFromTrinketScroll {
+    position: relative;
+    z-index: 1000;
+    margin: 50px auto 20px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: #E8D7B8;
+    cursor: pointer;
+    transition: opacity var(--transition-base), background var(--transition-base);
+}
+
+#backFromTrinketScroll:hover {
+    background-color: var(--hover-bg);
+}
+
+/* .trinketscrollpage .fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a1824;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(6px);
+} */
+
+/* Ensure controls are hidden */
+.carousel.showTrinketScroll #prev,
+.carousel.showTrinketScroll #next {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================
    RESPONSIVE DESIGN
    ========================= */
 
@@ -1240,6 +1496,21 @@ header nav a {
         font-size: 4em;
         display: block;
         margin-bottom: 100px;
+    }
+
+    .trinketscrollpage .banner .content h1 {
+        font-size: 7em;
+    }
+
+    .trinketscrollpage .banner .content {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trinketscrollpage .banner {
+        overflow: hidden;
     }
 }
 
@@ -1379,6 +1650,77 @@ header nav a {
         margin-right: 0;
         width: 100%;
         padding: 0 10px;
+    }
+
+    /* Trinket page mobile */
+    .trinketscrollpage {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+    }
+
+    /* .trinketscrollpage .fixed-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a1824;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    } */
+
+    .trinketscrollpage .banner {
+        padding: 100px 0;
+        margin-bottom: 150px;
+    }
+
+    .trinketscrollpage .banner h1 {
+        font-size: 7em;
+    }
+
+    .trinketscrollpage .content-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 150px;
+    }
+
+    .trinketscrollpage .content-block .image-content {
+        order: 1;
+    }
+
+    .trinketscrollpage .content-block .text-content {
+        order: 2;
+    }
+
+    .trinketscrollpage .image-content {
+        height: 300px;
+    }
+
+    .trinketscrollpage .text-content {
+        padding: 20px;
+        font-size: 1.4em;
+    }
+
+    .trinketscrollpage .content-block.imageA,
+    .trinketscrollpage .content-block.imageB,
+    .trinketscrollpage .content-block.imageC,
+    .trinketscrollpage .content-block.imageD {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .trinketscrollpage .content-spacer {
+        height: 300px;
+    }
+
+    #backFromTrinketScroll {
+        font-size: 12px;
+        padding: 8px 15px;
+        margin: 30px auto 15px;
+        z-index: 1000;
     }
 }
 

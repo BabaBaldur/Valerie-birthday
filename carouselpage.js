@@ -128,7 +128,10 @@ const BirthdayCarousel = (() => {
             window.location.hash = 'wheel';
         } else if (state.currentView === 'poetry') {
             window.location.hash = 'poetry';
+        } else if (state.currentView === 'trinket') {
+            window.location.hash = 'trinket';
         }
+        
     }
 
     // Navigate to specific item
@@ -198,6 +201,23 @@ const BirthdayCarousel = (() => {
         // Gradually fade in the fixed background
         setTimeout(() => {
             const fixedBg = document.querySelector('.poetryscrollpage .fixed-background');
+            if (fixedBg) {
+                fixedBg.style.display = 'block'; // Ensure it's displayed
+            }
+        }, 100);
+    }
+
+    // Show trinket view
+    function showTrinket() {
+        state.currentView = 'trinket';
+        elements.carousel.classList.remove('showDetail');
+        elements.carousel.classList.add('showTrinketScroll');
+        updateBlurBackgroundCrossfade('pageimages/keepsakebackground.jpeg');
+        updateHash();
+
+        // Gradually fade in the fixed background
+        setTimeout(() => {
+            const fixedBg = document.querySelector('.trinketscrollpage .fixed-background');
             if (fixedBg) {
                 fixedBg.style.display = 'block'; // Ensure it's displayed
             }
@@ -346,6 +366,10 @@ const BirthdayCarousel = (() => {
         } else if (hash === 'poetry') {
             navigateToItem('3');
             setTimeout(() => showPoetry(), 100);
+
+        } else if (hash === 'trinket') {
+            navigateToItem('4');
+            setTimeout(() => showTrinket(), 100);
         }
     }
 
@@ -365,6 +389,7 @@ const BirthdayCarousel = (() => {
                 const target = button.getAttribute('data-target');
                 if (target === 'wheel') showWheel();
                 else if (target === 'poetry') showPoetry();
+                else if (target === 'trinket') showTrinket();
             });
         });
         
@@ -382,6 +407,11 @@ const BirthdayCarousel = (() => {
                     // Background transitions are handled via CSS
                     elements.carousel.classList.remove('showPoetryScroll');
                     navigateToItem('3');
+                    setTimeout(() => showDetail(), 100);
+
+                } else if (from === 'trinket') {
+                    elements.carousel.classList.remove('showTrinketScroll');
+                    navigateToItem('4');
                     setTimeout(() => showDetail(), 100);
                 }
             });
@@ -402,7 +432,8 @@ const BirthdayCarousel = (() => {
         showSlider,
         showDetail,
         showWheel,
-        showPoetry
+        showPoetry,
+        showTrinket
     };
 })();
 
