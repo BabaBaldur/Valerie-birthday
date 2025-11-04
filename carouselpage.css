@@ -294,6 +294,19 @@ header nav a {
     background-color: var(--hover-bg);
 }
 
+.item[data-item="1"]:nth-child(2) .introduce .title{
+    color: rgb(78, 77, 83);
+}
+.item[data-item="1"]:nth-child(2) .introduce .topic {
+    color: rgb(160, 139, 100);
+}
+.item[data-item="1"]:nth-child(2) .introduce .des {
+    color: rgb(235, 226, 203);
+}
+.item[data-item="1"]:nth-child(2) .introduce .seeMore {
+    color: rgb(78, 77, 83);
+}
+
 .item[data-item="2"]:nth-child(2) .introduce .title{
     color: rgb(252, 250, 242);
 }
@@ -491,7 +504,16 @@ header nav a {
     pointer-events: auto;
 }
 
-/* Detail content styling - FIXED: removed redundant double selector */
+.carousel.showDetail .list .item[data-item="1"]:nth-child(2) .detail .title {
+    color: rgb(160, 139, 100)
+}
+.carousel.showDetail .list .item[data-item="1"]:nth-child(2) .detail .des   {
+    color: rgb(235, 226, 203);
+}
+.carousel.showDetail .list .item[data-item="1"]:nth-child(2) .detail .checkout button {
+    color: rgb(78, 77, 83);
+}
+
 .carousel.showDetail .list .item[data-item="2"]:nth-child(2) .detail h1 {
     color: #ede1c8;
     text-shadow: 0 0 1px #0009;
