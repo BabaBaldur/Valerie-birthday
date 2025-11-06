@@ -389,6 +389,12 @@ const BirthdayCarousel = (() => {
                 if (target === 'wheel') showWheel();
                 else if (target === 'poetry') showPoetry();
                 else if (target === 'trinket') showTrinket();
+                else if (target === 'edit') {
+                    window.open('https://drive.google.com/drive/folders/1LWpue9wdi3jgKTfViFp_HpPjihWUzEGj?dmr=1&ec=wgc-drive-globalnav-goto', '_blank');
+                }
+                else if (target === 'bts') {
+                    window.open('https://drive.google.com/drive/folders/1Kxm6IY8yS0a_zyyY4Lyz3jEAkYjCfK6R?dmr=1&ec=wgc-drive-globalnav-goto', '_blank');
+                }
             });
         });
         
