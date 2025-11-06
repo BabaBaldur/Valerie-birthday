@@ -340,6 +340,19 @@ header nav a {
     color: rgb(139, 103, 59);
 }
 
+.item[data-item="5"]:nth-child(2) .introduce .title{
+    color: rgb(97, 66, 47);
+}
+.item[data-item="5"]:nth-child(2) .introduce .topic {
+    color: rgb(2265, 160, 102);
+}
+.item[data-item="5"]:nth-child(2) .introduce .des {
+    color: rgba(254, 245, 202);
+}
+.item[data-item="5"]:nth-child(2) .introduce .seeMore {
+    color: rgb(139, 103, 59);
+}
+
 /* =========================
    ANIMATIONS
    ========================= */
@@ -542,6 +555,16 @@ header nav a {
     color: rgba(172, 178, 130);
 }
 .carousel.showDetail .list .item[data-item="4"]:nth-child(2) .detail .checkout button {
+    color: rgb(139, 103, 59);
+}
+
+.carousel.showDetail .list .item[data-item="5"]:nth-child(2) .detail .title {
+    color: rgb(265, 160, 102);
+}
+.carousel.showDetail .list .item[data-item="5"]:nth-child(2) .detail .des {
+    color: rgba(254, 245, 202);
+}
+.carousel.showDetail .list .item[data-item="5"]:nth-child(2) .detail .checkout button {
     color: rgb(139, 103, 59);
 }
 
